@@ -1,21 +1,25 @@
 import { AssistantPackage, RuleDefinition } from '@sketch-hq/sketch-assistant-types'
 
-const helloWorld: RuleDefinition = {
+const colorName: RuleDefinition = {
   rule: async (context) => {
-    context.utils.report('Hello world')
+    const { utils } = context
+    // Iterate
+    for (const swatch of utils.objects.swatch) {
+      utils.report(`${swatch.name}`)
+    }
   },
-  name: 'sketch-assistant-template/hello-world',
-  title: 'Hello World',
-  description: 'Reports a hello world message',
+  name: 'color-naming-conventions-assistant/color-name',
+  title: 'Color Naming Conventions Assistant',
+  description: 'Reports Color Variables naming conventions',
 }
 
 const assistant: AssistantPackage = async () => {
   return {
-    name: 'sketch-assistant-template',
-    rules: [helloWorld],
+    name: 'color-naming-conventions-assistant',
+    rules: [colorName],
     config: {
       rules: {
-        'sketch-assistant-template/hello-world': { active: true },
+        'color-naming-conventions-assistant/color-name': { active: true },
       },
     },
   }
