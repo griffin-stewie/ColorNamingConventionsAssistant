@@ -5,7 +5,9 @@ const colorName: RuleDefinition = {
     const { utils } = context
     // Iterate
     for (const swatch of utils.objects.swatch) {
-      utils.report(`${swatch.name}`)
+      if (swatch.name.includes("-") || swatch.name.includes("_")) {
+        utils.report(`${swatch.name}: Use half-width space as word delimiter, instead of '_' or '-'`)
+      }
     }
   },
   name: 'color-naming-conventions-assistant/color-name',
