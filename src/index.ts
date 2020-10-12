@@ -6,13 +6,13 @@ const colorName: RuleDefinition = {
     // Iterate
     for (const swatch of utils.objects.swatch) {
       if (swatch.name.includes("-") || swatch.name.includes("_")) {
-        utils.report(`${swatch.name}: Use half-width space as word delimiter, instead of '_' or '-'`)
+        utils.report(`${swatch.name}`)
       }
     }
   },
   name: 'color-naming-conventions-assistant/color-name',
-  title: 'Color Naming Conventions Assistant',
-  description: 'Reports Color Variables naming conventions',
+  title: 'Use half-width space as word delimiter, instead of "_" or "-"',
+  description: 'Consistent naming conventions are developer-friendly when exporting colors in other plugins.',
 }
 
 const assistant: AssistantPackage = async () => {
