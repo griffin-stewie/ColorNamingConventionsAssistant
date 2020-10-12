@@ -1,6 +1,6 @@
 {
   "name": "color-naming-conventions-assistant",
-  "homepage": "https://github.com/sketch-hq/color-naming-conventions-assistant",
+  "homepage": "https://github.com/griffin-stewie/ColorNamingConventionsAssistant",
   "version": "1.0.0",
   "main": "dist/index.js",
   "sketch": "dist/sketch.js",
